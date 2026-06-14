@@ -1,0 +1,30 @@
+module aes_core_32bit (
+    input  [31:0] data_in,
+    output [31:0] data_out
+);
+
+    wire [7:0] out3, out2, out1, out0;
+
+    aes_sbox_gf sbox_inst0 (
+        .sbox_in (data_in[7:0]),
+        .sbox_out(out0)
+    );
+
+    aes_sbox_gf sbox_inst1 (
+        .sbox_in (data_in[15:8]),
+        .sbox_out(out1)
+    );
+
+    aes_sbox_gf sbox_inst2 (
+        .sbox_in (data_in[23:16]),
+        .sbox_out(out2)
+    );
+
+    aes_sbox_gf sbox_inst3 (
+        .sbox_in (data_in[31:24]),
+        .sbox_out(out3)
+    );
+
+    assign data_out = {out3, out2, out1, out0};
+
+endmodule
