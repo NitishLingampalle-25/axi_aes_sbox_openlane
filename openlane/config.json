@@ -1,0 +1,13 @@
+{
+    "DESIGN_NAME": "axi_lite_slave",
+    "VERILOG_FILES": [
+        "dir::src/axi_lite_slave.v",
+        "dir::src/aes_core_32bit.v",
+        "dir::src/aes_sbox_gf.v"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 10.0,
+    "FP_CORE_UTIL": 35,
+    "FP_SIZING": "relative",
+    "DESIGN_IS_CORE": true
+}
